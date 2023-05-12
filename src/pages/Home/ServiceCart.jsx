@@ -1,6 +1,7 @@
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 const ServiceCart = ({ service }) => {
-    const { title, img, price } = service;
+    const { _id, title, img, price } = service;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -11,7 +12,7 @@ const ServiceCart = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <div className='flex justify-between text-[#FF3811]'>
                     <p>Price: ${price}</p>
-                    <span className='text-right'><BiRightArrowAlt className='text-right' size={30}></BiRightArrowAlt> </span>
+                    <span className='text-right'><Link to={`checkout/${_id}`}><BiRightArrowAlt className='text-right' size={30}></BiRightArrowAlt></Link>  </span>
                 </div>
 
             </div>
